@@ -20,6 +20,8 @@ const router = createRouter({
 
 // navigation guard para home '/'
 router.beforeEach((to, from, next) => {
+  // si el usuario esta autenticado e ingresa a login por algun motivo
+  // redirecciona a home
   if (to.name === 'Login' && isAuthenticated()) {
     next({ name: 'Home' });
   }
