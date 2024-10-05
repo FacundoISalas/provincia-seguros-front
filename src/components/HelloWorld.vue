@@ -23,7 +23,10 @@
               {{ 'buton' }}
             </v-btn>
             <v-btn @click="changeLocaleService('en')">
-              {{ 'change locale service '}}
+              {{ 'change locale service en '}}
+            </v-btn>
+            <v-btn @click="changeLocaleService('es')">
+              {{ 'cambiar servicio locale es '}}
             </v-btn>
           </Form>
         </v-col>

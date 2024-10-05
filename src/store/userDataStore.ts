@@ -21,4 +21,7 @@ export const useUserData = defineStore('userData', () => {
   }
   
   return { userName, validUserName, validPassword, isUserAuth, getUserName, setUserData };
-})
+},
+{
+  persist: true,
+});
