@@ -1,4 +1,5 @@
 {
-  "globalWelcomeMsg":"Bienvenido",
-  "globalWelcomeMsg2":"Bienvenido 2"
+  "globalLogin":"Login",
+  "globalUser":"Usuario",
+  "globalPassword":"Contraseña"
 }

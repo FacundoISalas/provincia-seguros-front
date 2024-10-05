@@ -16,14 +16,14 @@ export default  {
         generateMessage: localize({
           en: {
             messages: {
-              required: 'This {field} is required',
+              required: 'The field {field} is required',
               min: 'The min quantity of characters of the field {field} is {min}',
               max: 'The max quantity of characters of the field {field} is {max}',
             },
           },
           es: {
             messages: {
-              required: 'Este {field} es requerido',
+              required: 'El campo {field} es requerido',
               min: 'La cantidad minima de caracteres del campo {field} es {min}',
               max: 'La cantidad maxima de caracteres del campo {field} es {max}',
             },

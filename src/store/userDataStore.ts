@@ -7,7 +7,7 @@ export const useUserData = defineStore('userData', () => {
   // data
   const userName = ref<string>('pepitow');
   // fakeData para login
-  const validUserName = ref<string>('GongalezGarcia25');
+  const validUserName = ref<string>('gongalezGarcia25');
   const validPassword = ref<string>('segurosGG');
   // boolean valid fake login
   const isUserAuth = ref<Boolean>(false);
@@ -16,8 +16,9 @@ export const useUserData = defineStore('userData', () => {
   // functions funciona simil a actions en vuex
   
   // funcion para guardar los datos del usuario
-  function setUserData(user: string) {
+  function setUserData(user: string,) {
     userName.value = user;
+    isUserAuth.value = true;
   }
   
   return { userName, validUserName, validPassword, isUserAuth, getUserName, setUserData };

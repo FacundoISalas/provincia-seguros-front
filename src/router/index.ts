@@ -1,17 +1,25 @@
-/**
- * router/index.ts
- *
- * Automatic routes for `./src/pages/*.vue`
- */
+function isAuthenticated() {
+  return Boolean(localStorage.getItem('isUserAuth'));
+}
 
-// Composables
 import { createRouter, createWebHistory } from 'vue-router/auto'
-import { routes } from 'vue-router/auto-routes'
+import routes from '@/router/routes';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes,
 })
+
+// navigation guard para home '/'
+router.beforeEach((to, from, next) => {
+  if (to.meta.requiresAuth && !isAuthenticated()) {
+    // si el usuario no esta autenticado redirige a login
+    next({ name: 'Login' });
+  } else {
+    // caso contrario va a la proxima ruta
+    next();
+  }
+});
 
 // Workaround for https://github.com/vitejs/vite/issues/11804
 router.onError((err, to) => {
