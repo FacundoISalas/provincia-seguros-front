@@ -1,11 +1,12 @@
 <template>
-  <v-card>
+  <v-responsive class="fill-height fill-width d-flex align-center justify-center">
     <v-container fluid>
-      <p>home</p>
+      <Home/>
     </v-container>
-  </v-card>
+  </v-responsive>
 </template>
 
 <script lang="ts" setup>
+import Home from '@/modules/home/components/Home.vue';
 </script>
   
