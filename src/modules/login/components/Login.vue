@@ -68,7 +68,7 @@ import { Form, Field } from 'vee-validate';
 import { useUserData } from '@/store/userDataStore';
 import { useRouter } from 'vue-router'
 const userDataStore = useUserData();
-const router = useRouter();
+const router = useRouter()
 
 // data
 const userName = ref<string>('');
@@ -79,7 +79,7 @@ const isSnackbarOn = ref<boolean|undefined>(false);
 function loginEvent() {
   userDataStore.setUserData(userName.value);
   isSnackbarOn.value = true;
-  router.push('/');
+  router.push({ name: 'Home', query: { loginFirstTime: 'true' } });
 }
 </script>
   

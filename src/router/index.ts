@@ -1,5 +1,13 @@
 function isAuthenticated() {
-  return Boolean(localStorage.getItem('isUserAuth'));
+  let isAuth: boolean = false;
+  const localStorageData: string | null = localStorage.getItem('userData');
+  if (localStorageData) {
+    const jsonParse: any = JSON.parse(localStorageData);
+    if (jsonParse) {
+      isAuth = jsonParse.isUserAuth;
+    }
+  }
+  return isAuth;
 }
 
 import { createRouter, createWebHistory } from 'vue-router/auto'
@@ -12,6 +20,9 @@ const router = createRouter({
 
 // navigation guard para home '/'
 router.beforeEach((to, from, next) => {
+  if (to.name === 'Login' && isAuthenticated()) {
+    next({ name: 'Home' });
+  }
   if (to.meta.requiresAuth && !isAuthenticated()) {
     // si el usuario no esta autenticado redirige a login
     next({ name: 'Login' });
