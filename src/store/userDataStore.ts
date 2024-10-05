@@ -5,10 +5,7 @@ import { defineStore } from 'pinia';
 
 export const useUserData = defineStore('userData', () => {
   // data
-  const userName = ref<string>('pepitow');
-  // fakeData para login
-  const validUserName = ref<string>('gongalezGarcia25');
-  const validPassword = ref<string>('segurosGG');
+  const userName = ref<string>('');
   // boolean valid fake login
   const isUserAuth = ref<Boolean>(false);
   // computed funciona simil a getters en vuex
@@ -21,7 +18,12 @@ export const useUserData = defineStore('userData', () => {
     isUserAuth.value = true;
   }
   
-  return { userName, validUserName, validPassword, isUserAuth, getUserName, setUserData };
+  return {
+    userName,
+    isUserAuth,
+    getUserName,
+    setUserData
+  };
 },
 {
   persist: true,

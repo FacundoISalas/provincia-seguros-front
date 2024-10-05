@@ -1,5 +1,6 @@
 {
   "globalLogin":"Login",
   "globalUser":"User",
-  "globalPassword":"Password"
+  "globalPassword":"Password",
+  "globalLoginSucces":"Login successful, welcome"
 }

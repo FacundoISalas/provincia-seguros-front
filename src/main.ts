@@ -17,9 +17,12 @@ import { createPinia } from 'pinia'
 import piniaPluginPersistedstate from 'pinia-plugin-persistedstate'
 import validationRules from './validations/validation-rules';
 import i18n from './locales/i18nService';
+// vue router
+import router from '@/router/index'; // Your router instance
 
 const app = createApp(App);
 const pinia = createPinia();
+app.use(router);
 app.use(validationRules);
 app.use(pinia);
 // persisto el store de pinia asi no se limpia al refrescar la pagina
