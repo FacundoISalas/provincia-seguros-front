@@ -14,15 +14,16 @@ import { createVuetify, type ThemeDefinition } from 'vuetify'
 const provinciaSegurosTheme: ThemeDefinition = {
   dark: false,
   colors: {
-    background: '#FFFFFF',            // White
-    surface: '#FFFFFF',               // White
-    primary: '#FFFFFF',               // White
-    'primary-darken-1': '#3700B3',    // Darkened primary color (optional)
-    secondary: '#002f87',             // Dark Blue
-    error: '#D50000',                 // Red
-    info: '#2196F3',                  // Blue
-    success: '#00C853',               // Green Accent-4
-    warning: '#FF9800',               // Orange
+    background: '#FFFFFF',
+    surface: '#FFFFFF',
+    primary: '#FFFFF',
+    'primary-darken-1': '#E0E0E0',
+    secondary: '#234079',
+    'secondary-darken-1': '#1A2B5D',
+    error: '#F44336',
+    info: '#2196F3',
+    success: '#00C853',
+    warning: '#FB8C00',
   },
 }
 
