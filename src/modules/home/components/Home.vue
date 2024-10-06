@@ -23,16 +23,15 @@
       class="align-center text-white"
       cover
     >
-    <div>
-      <div class="d-flex justify-start imgTextContainer" style="">
+      <div class="d-flex justify-start imgTextContainer text-wrap">
         <v-card
           color="secondary"
+          class="d-flex flex-column justify-center"
          >
-          <v-card-title>{{ slide.text }}</v-card-title>
-          <v-card-subtitle> {{  slide.subText }}</v-card-subtitle>
+          <v-card-title class="textBreak">{{ slide.text }}</v-card-title>
+          <v-card-subtitle class="textBreak"> {{  slide.subText }}</v-card-subtitle>
         </v-card>
       </div>
-    </div>
     </v-img>
     </v-card>
     <div>{{  slide  }}</div>
@@ -101,10 +100,21 @@ onMounted(() => {
   }
 });
 </script>
-<style>
-  .imgTextContainer {
-    display: flex;
-    margin-left: 5%;
-  }
+<style scoped>
+ .imgTextContainer {
+  display: flex;
+  position: absolute;
+  top: 65%;
+  left: 0;
+  transform: translateY(-50%);
+  z-index: 1;
+  max-width: 80%;
+}
+.textBreak {
+  word-break: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  text-align: left;
+}
 </style>
   

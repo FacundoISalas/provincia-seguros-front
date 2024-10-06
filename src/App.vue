@@ -26,7 +26,7 @@
         </v-img>
       </router-link>
       </v-app-bar-title>
-      <v-toolbar-items>
+      <v-toolbar-items v-if="!$vuetify.display.mobile">
         <v-btn
           flat
           v-for="item in menuItems"
