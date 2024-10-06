@@ -3,7 +3,7 @@
       <!-- loader skeleton -->
       <v-skeleton-loader
         v-if="isLoading"
-        type="card"
+        type="table"
       >
       </v-skeleton-loader>
       <!-- ilustracion por si no hay datos -->
