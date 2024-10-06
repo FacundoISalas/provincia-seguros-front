@@ -61,7 +61,7 @@ const userPassword = ref<string>('');
 // methods
 function loginEvent() {
   userDataStore.setUserData(userName.value);
-  router.push({ name: 'Home', query: { loginFirstTime: 'true' } });
+  router.push({ path: '/', query: { loginFirstTime: 'true' } });
 }
 </script>
   
