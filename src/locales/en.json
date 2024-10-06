@@ -12,5 +12,7 @@
   "globalAboutUs":"About us",
   "globalBranches":"Branches",
   "globalOptions":"Options",
-  "globalLogout":"Logout"
+  "globalLogout":"Logout",
+  "globalEs":"es",
+  "globalEn":"en"
 }

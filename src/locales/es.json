@@ -12,5 +12,7 @@
   "globalAboutUs":"Quiénes somos",
   "globalBranches":"Sucursales",
   "globalOptions":"Opciones",
-  "globalLogout":"Cerrar sesión"
+  "globalLogout":"Cerrar sesión",
+  "globalEs":"es",
+  "globalEn":"en"
 }

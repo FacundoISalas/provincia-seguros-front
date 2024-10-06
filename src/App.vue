@@ -53,7 +53,6 @@
               color="secondary"
               v-bind="props"
               icon="mdi-account"
-              small
               >
             </v-btn>
             <p class="font-size-1 font-weight-bold">
@@ -63,16 +62,24 @@
         </template>
         <v-card>
           <v-card-text>
+            <v-radio-group
+              inline
+              :label="$t('language')"
+              append-icon="mdi-translate"
+              v-model="selectedLanguage"
+            >
+              <v-radio :label="$t('globalEs')" :value="t('globalEs')"></v-radio>
+              <v-radio :label="t('globalEn')" :value="t('globalEn')"></v-radio>
+            </v-radio-group>
             <v-btn
               fab
               v-tooltip:bottom="$t('globalLogout')"
-              small
+              class="my-2"
             >
               {{ $t('globalLogout') }}
               <v-icon
                 color="secondary"
                 class="ml-1"
-                small
               >
                 mdi-logout
               </v-icon>
@@ -111,11 +118,14 @@
 </template>
 
 <script lang="ts" setup>
-import { ref } from 'vue';
+import { ref, watch } from 'vue';
 import { useUserData } from '@/store/userDataStore';
+import { useCommonAppStore } from '@/store/commonAppStore';
 import { useI18n } from 'vue-i18n';
 const { t } = useI18n();
 
+
+type Locale = 'es' | 'en';
 // interfaces
 interface menuItemsInterface {
   title: string;
@@ -123,11 +133,13 @@ interface menuItemsInterface {
   icon?: string;
 }
 const userDataStore = useUserData();
+const commonAppStore = useCommonAppStore();
 
 // data
 const userName = ref<string>(userDataStore.getUserName);
 const isUserMenuOn = ref<boolean|undefined>(false);
 const drawer = ref<boolean|undefined>(false);
+const selectedLanguage = ref<Locale>(commonAppStore.locale);
 
 const menuItems = ref<menuItemsInterface[]>([
   {
@@ -155,4 +167,9 @@ const menuItems = ref<menuItemsInterface[]>([
   },
 ]
 );
+
+// watch 
+watch(selectedLanguage, (newLocale) => {
+  commonAppStore.setLocaleI18n(newLocale);
+  });
 </script>

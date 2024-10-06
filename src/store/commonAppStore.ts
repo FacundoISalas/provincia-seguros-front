@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia';
-import { ref, watch } from 'vue';
+import { ref, watch, computed } from 'vue';
 import i18n from '@/locales/i18nService';
 import { setLocale } from '@vee-validate/i18n';
 
@@ -8,7 +8,8 @@ export const useCommonAppStore = defineStore('commonAppStore', () => {
 
   // reviso si existe locale persistido de antes en el localstorage si no por defecto utiliza locale es español
   const locale = ref<Locale>(localStorage.getItem('pinia-state') ? JSON.parse(localStorage.getItem('pinia-state')!).commonAppStore.locale : 'es');
-  
+  const getLocale = computed(() => locale.value);
+
   function setLocaleI18n(newLocale: Locale) {
     locale.value = newLocale;
   }
@@ -18,7 +19,7 @@ export const useCommonAppStore = defineStore('commonAppStore', () => {
     i18n.global.locale = newLocale;
     setLocale(newLocale);
   });
-  return { locale, setLocaleI18n };
+  return { locale, getLocale, setLocaleI18n };
 },
 {
   persist: true,
