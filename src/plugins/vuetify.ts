@@ -7,6 +7,7 @@
 // Styles
 import '@mdi/font/css/materialdesignicons.css'
 import 'vuetify/styles'
+import { en, es } from 'vuetify/locale'
 
 // Composables
 import { createVuetify, type ThemeDefinition } from 'vuetify'
@@ -28,7 +29,18 @@ const provinciaSegurosTheme: ThemeDefinition = {
 }
 
 // https://vuetifyjs.com/en/introduction/why-vuetify/#feature-guides
+const localeStorage = localStorage.getItem('commonAppStore');
+let localeVuetify = 'es';
+if (localeStorage) {
+  const localeValue = JSON.parse(localeStorage);
+  localeVuetify = localeValue.locale;
+}
 export default createVuetify({
+  locale: {
+    locale: localeVuetify,
+    fallback: 'en',
+    messages: { en, es },
+  },
   theme: {
     defaultTheme: 'provinciaSegurosTheme',
     themes: {

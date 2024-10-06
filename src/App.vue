@@ -123,7 +123,8 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, watch, computed, mergeProps } from 'vue';
+import { ref, computed, mergeProps } from 'vue';
+import { useRouter } from 'vue-router';
 import { useUserData } from '@/store/userDataStore';
 import { useCommonAppStore } from '@/store/commonAppStore';
 import { useI18n } from 'vue-i18n';
@@ -131,7 +132,6 @@ const { t } = useI18n();
 
 const userDataStore = useUserData();
 const commonAppStore = useCommonAppStore();
-import { useRouter } from 'vue-router';
 
 const router = useRouter();
 // data
@@ -170,8 +170,4 @@ function logout() {
   userDataStore.logout();
   router.push('/login');
 }
-// watch 
-watch(selectedLanguage, (newLocale) => {
-  commonAppStore.setLocaleI18n(newLocale);
-  });
 </script>
