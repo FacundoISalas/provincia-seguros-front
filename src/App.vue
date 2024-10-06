@@ -2,7 +2,7 @@
   <v-app>
     <v-main>
       <v-app-bar
-        v-if="isUserAuth"
+        v-if="userDataStore.getIsUserAuth"
         elevation="2" 
       >
       <template v-slot:prepend>
@@ -73,10 +73,9 @@ interface menuItemsInterface {
   icon?: string;
 }
 const userDataStore = useUserData();
-// data
 
+// data
 const userName = ref<string>(userDataStore.getUserName);
-const isUserAuth = ref<Boolean>(userDataStore.getIsUserAuth);
 const isUserMenuOn = ref<boolean|undefined>(false);
 const menuItems = ref<menuItemsInterface[]>([
   {
