@@ -44,7 +44,9 @@
         </v-btn>
       </v-toolbar-items>
       <v-spacer></v-spacer>
-      <v-menu>
+      <v-menu
+        width="240"
+      >
       <template v-slot:activator="{ props: menu }">
         <v-tooltip location="top">
           <template v-slot:activator="{ props: tooltip }">
@@ -80,10 +82,12 @@
             v-tooltip:bottom="$t('globalLogout')"
             class="my-2"
             @click="logout()"
+            color="primary--text bg-secondary"
+            block
           >
             {{ $t('globalLogout') }}
             <v-icon
-              color="secondary"
+              color="primary"
               class="ml-1"
             >
               mdi-logout
