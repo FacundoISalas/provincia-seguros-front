@@ -33,5 +33,6 @@ export const useUserData = defineStore('userData', () => {
   };
 },
 {
+  // persisto el state de pinia en localstorage para que no se pierda al refrescar la pagina
   persist: true,
 });

@@ -20,7 +20,9 @@ export const useCommonAppStore = defineStore('commonAppStore', () => {
     localize(newLocale);
   });
   return { locale, getLocale, setLocaleI18n };
-}, {
+},
+{
+  // persisto el state de pinia en localstorage para que no se pierda al refrescar la pagina
   persist: true,
 });
 

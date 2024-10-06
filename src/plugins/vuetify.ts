@@ -12,6 +12,7 @@ import { en, es } from 'vuetify/locale'
 // Composables
 import { createVuetify, type ThemeDefinition } from 'vuetify'
 
+// tema custom
 const provinciaSegurosTheme: ThemeDefinition = {
   dark: false,
   colors: {
@@ -28,7 +29,8 @@ const provinciaSegurosTheme: ThemeDefinition = {
   },
 }
 
-// https://vuetifyjs.com/en/introduction/why-vuetify/#feature-guides
+// busco el setting del locale y le asigno a vuetify que utilice ese locale
+// caso contrario toma por defecto español
 const localeStorage = localStorage.getItem('commonAppStore');
 let localeVuetify = 'es';
 if (localeStorage) {
