@@ -20,5 +20,7 @@ export const useCommonAppStore = defineStore('commonAppStore', () => {
     localize(newLocale);
   });
   return { locale, getLocale, setLocaleI18n };
+}, {
+  persist: true,
 });
 

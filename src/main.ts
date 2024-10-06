@@ -16,9 +16,11 @@ import { createPinia } from 'pinia'
 // i18n and vee-validate rules
 import validationRules from './validations/validation-rules';
 import i18n from './locales/i18nService';
+import piniaPluginPersistedstate from 'pinia-plugin-persistedstate'
 
 const app = createApp(App);
 const pinia = createPinia();
+pinia.use(piniaPluginPersistedstate)
 app.use(validationRules);
 app.use(pinia);
 app.use(i18n);
