@@ -44,7 +44,7 @@ Pinia, en la documentacion de vue dicen que si bien vuex funciona correctamente 
 importante tambien se esta utilizando el paquete piniaPluginPersistedstate para persistir el estado de pinia en localstorage de esta forma al refrescar la aplicacion el estado no se pierde y este solo se afecta mediante mutaciones.
 <br /><br /> 
 
-## librerias y frameworks
+## Librerias y frameworks
 considerando la posibilidad de que el proyecto crezca decidi de entrada integrarlo con funciones que pueden ayudar a un desarrollo mas agil a futuro.<br /> <br />
 implemente vuetify que se rige por las reglas de material design garantizando un diseño consistente y familiar al usuario.<br /><br />
 
@@ -54,10 +54,10 @@ vee-validate, si bien las reglas de validacion solicitadas eran simples y podian
 
 se utilizo axios para realizar las peticiones solicitadas.
 
-## nota personal:
+## Nota personal:
 Personalmente tenia poca experiencia con vue 3 , typescript y pinia, podria haber realizado el proyecto en la version 2 de vue con javascript con la cual me siento mas comodo por que es lo que uso actualmente, pero preferi aprovechar para practicar y aprender mas de vue 3 ademas de que a futuro va a ser mas mantenible que vue 2.
 
-## estructura del proyecto
+## Estructura del proyecto
 decidi estructurar el proyecto de la siguiente forma asumiendo que cada vista es un modulo independiente que puede crecer a futuro y tener mas funciones.
 
 ![alt text](image-1.png)
@@ -69,7 +69,7 @@ cada carpeta dentro de module contiene las vistas que corresponden al router y l
 ![alt text](image-2.png)
 
 ![alt text](image-7.png)
-## navegacion del proyecto
+## Navegacion del proyecto
 
 ruta '/' login
 
