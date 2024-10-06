@@ -155,8 +155,10 @@
       sm="12"
       >
         <div class="d-flex flex justify-start align-center">
-          <v-icon>mdi-map-marker</v-icon>
-          <div class="d-flex flex-column align-start">
+          <div class="mx-2">
+            <v-icon>mdi-map-marker</v-icon>
+          </div>
+          <div class="d-flex flex-column align-end">
             <p>{{ $t('globalAdress') }}</p>
             <p> {{ $t('globalAddressLocation') }}</p>
             <p> {{ $t('globalCityLocation') }}</p>
@@ -170,8 +172,10 @@
       sm="12"
       >
         <div class="d-flex flex justify-start align-center">
-          <v-icon>mdi-email</v-icon>
-          <div class="d-flex flex-column align-start mx-2">
+          <div class="mx-2">
+            <v-icon>mdi-email</v-icon>
+          </div>
+          <div class="d-flex flex-column align-end">
             <p>{{ $t('globalEmail') }}</p>
             <p>{{ $t('globalEmailAdress') }}</p>
           </div>
@@ -184,8 +188,10 @@
       sm="12"
       >
         <div class="d-flex flex justify-start align-center">
-          <v-icon>mdi-cellphone</v-icon>
-          <div class="d-flex flex-column align-center mx-2">
+          <div class="mx-2">
+            <v-icon>mdi-cellphone</v-icon>
+          </div>
+          <div class="d-flex flex-column align-end">
             <p>{{ $t('globalPhones') }}</p>
             <p>{{ $t('globalPhoneOption1') }}</p>
             <p>{{ $t('globalPhoneOption2') }}</p>
@@ -199,8 +205,11 @@
       sm="12"
       >
         <div class="d-flex flex justify-start align-center">
-          <v-icon>mdi-clock</v-icon>
-          <div class="d-flex flex-column align-center mx-2">
+          <div class="mx-2">
+            <v-icon>mdi-clock</v-icon>
+
+          </div>
+          <div class="d-flex flex-column align-end">
             <p>{{ $t('globalHourTimes') }}</p>
             <p>{{ $t('globalAttentionHourTimes') }}</p>
             <p>{{ $t('globalEmergenciesAttention') }}</p>
