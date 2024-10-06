@@ -14,5 +14,6 @@
   "globalOptions":"Opciones",
   "globalLogout":"Cerrar sesión",
   "globalEs":"es",
-  "globalEn":"en"
+  "globalEn":"en",
+  "globalLanguage":"Idioma"
 }

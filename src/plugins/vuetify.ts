@@ -16,7 +16,7 @@ const provinciaSegurosTheme: ThemeDefinition = {
   colors: {
     background: '#FFFFFF',
     surface: '#FFFFFF',
-    primary: '#FFFFF',
+    primary: '#FFFFFF',
     'primary-darken-1': '#E0E0E0',
     secondary: '#234079',
     'secondary-darken-1': '#1A2B5D',

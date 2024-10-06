@@ -122,6 +122,7 @@ import { ref, watch } from 'vue';
 import { useUserData } from '@/store/userDataStore';
 import { useCommonAppStore } from '@/store/commonAppStore';
 import { useI18n } from 'vue-i18n';
+import { localize } from '@vee-validate/i18n';
 const { t } = useI18n();
 
 

@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia';
 import { ref, watch, computed } from 'vue';
 import i18n from '@/locales/i18nService';
-import { setLocale } from '@vee-validate/i18n';
+import { localize, setLocale } from '@vee-validate/i18n';
 
 type Locale = 'es' | 'en';
 export const useCommonAppStore = defineStore('commonAppStore', () => {
@@ -12,6 +12,7 @@ export const useCommonAppStore = defineStore('commonAppStore', () => {
 
   function setLocaleI18n(newLocale: Locale) {
     locale.value = newLocale;
+    localize(newLocale);
   }
 
   // si ocurren cambios en el locale actualizo tanto i18n como validaciones 
