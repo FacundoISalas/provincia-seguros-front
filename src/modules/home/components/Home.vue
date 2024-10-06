@@ -232,7 +232,7 @@
     <v-btn
       icon="mdi-close"
       fab
-      @click="isSnackbarOn = false"
+      @click="userDataStore.clearFirstTimeAuth()"
     >
     </v-btn>
   </template>
@@ -241,17 +241,15 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, computed, onMounted } from 'vue';
-import { useRoute } from 'vue-router'
+import { ref, computed, onBeforeUnmount } from 'vue';
 import { useI18n } from 'vue-i18n';
 const { t } = useI18n();
-const route = useRoute();
 
 // data
-const isSnackbarOn = ref<boolean|undefined>(false);
 import { useUserData } from '@/store/userDataStore';
 const userDataStore = useUserData();
 const userName = computed(() => userDataStore.getUserName);
+const isSnackbarOn = computed(() =>userDataStore.getIsUserFirstTimeAuth);
 const slides = ref<any[]>([
   {
     src: '/src/assets/images/insuranceSearch.jpg',
@@ -303,11 +301,8 @@ const cardHelpers = ref<any[]>([
     subText: t('globalSalesChannelsSubText')
   },
 ]);
-// revisar si es el primer inicio de sesion para mostrar snackbar
-onMounted(() => {
-  if (route.query && route.query.loginFirstTime) {
-    isSnackbarOn.value = true;
-  }
+onBeforeUnmount(() => {
+  userDataStore.clearFirstTimeAuth();
 });
 </script>
 <style scoped>
