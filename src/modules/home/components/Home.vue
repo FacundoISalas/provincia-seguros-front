@@ -118,14 +118,20 @@
     <v-card
       variant="outlined"
       class="d-flex flex-column"
-      width="80%"
+      :width="$vuetify.display.mobile ? '98%' : '90%'"
       height="260"
     >
       <div class="d-flex justify-center align-center my-auto">
-        <v-icon size="120" class="mr-4"> {{  cardHelper.icon }}</v-icon>
+        <v-icon
+          class="mr-4"
+          :size="$vuetify.display.mdAndDown ? '60' : '120'"
+        > {{  cardHelper.icon }}
+        </v-icon>
         <div>
-          <v-card-title class="mb-0 text-uppercase text-h5">{{  cardHelper.text }}</v-card-title>
-          <p class="mb-0 text-uppercase white-text text-h5">{{  cardHelper.subText }}</p>
+          <div class="text-container">
+            <v-card-title :class="$vuetify.display.mdAndDown ? 'mb-0 text-uppercase text-center text-break text-body-1' : 'mb-0 text-uppercase text-h5'">{{  cardHelper.text }}</v-card-title>
+            <p :class="$vuetify.display.mdAndDown ? 'mb-0 text-uppercase text-body text-center text-break text-body-1' : 'mb-0 text-uppercase white-text text-h5'">{{  cardHelper.subText }}</p>
+          </div>
         </div>
       </div>
     </v-card>
