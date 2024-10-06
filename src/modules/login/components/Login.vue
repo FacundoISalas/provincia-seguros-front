@@ -44,22 +44,6 @@
         </v-card-actions>
       </v-card>
     </Form>
-    <v-snackbar
-      v-model="isSnackbarOn"
-      timeout="2000"
-      color="success"
-      location="top"
-    >
-    <template v-slot:actions>
-        <v-btn
-          icon="mdi-close"
-          fab
-          @click="isSnackbarOn = false"
-        >
-        </v-btn>
-      </template>
-      {{ $t('globalLoginSucces') }}
-    </v-snackbar>
 </template>
 
 <script lang="ts" setup>
@@ -73,12 +57,10 @@ const router = useRouter()
 // data
 const userName = ref<string>('');
 const userPassword = ref<string>('');
-const isSnackbarOn = ref<boolean|undefined>(false);
 
 // methods
 function loginEvent() {
   userDataStore.setUserData(userName.value);
-  isSnackbarOn.value = true;
   router.push({ name: 'Home', query: { loginFirstTime: 'true' } });
 }
 </script>
