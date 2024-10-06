@@ -10,6 +10,7 @@ export const useUserData = defineStore('userData', () => {
   const isUserAuth = ref<Boolean>(false);
   // computed funciona simil a getters en vuex
   const getUserName = computed(() => userName.value)
+  const getIsUserAuth = computed(() => isUserAuth.value)
   // functions funciona simil a actions en vuex
   
   // funcion para guardar los datos del usuario
@@ -22,6 +23,7 @@ export const useUserData = defineStore('userData', () => {
     userName,
     isUserAuth,
     getUserName,
+    getIsUserAuth,
     setUserData
   };
 },
