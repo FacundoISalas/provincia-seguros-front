@@ -154,7 +154,7 @@ const menuItems = computed(() => [
     title: t('globalCompanyInsurance'),
   },
   {
-    title: t('globalCustomers'),
+    title: t('globalCustomersMenu'),
   },
   {
     title: t('globalPas'),

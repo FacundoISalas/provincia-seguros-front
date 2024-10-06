@@ -163,6 +163,28 @@ const slides = ref<any[]>([
     actionSecondaryIcon: null,
   },
 ]);
+const cardHelpers = ref<any[]>([
+  {
+    icon: 'mdi-account-group',
+    text: t('globalCustomers'),
+    subText: t('globalCustomersSubText')
+  },
+  {
+    icon: 'mdi-car-back',
+    text: t('globalAccidents'),
+    subText: t('globalAccidentsSubText')
+  },
+  {
+    icon: 'mdi-account-credit-card-',
+    text: t('globalPaymentWays'),
+    subText: t('globalPaymentWaysSubText')
+  },
+  {
+    icon: 'mdi-handhsake',
+    text: t('globalSalesChannels'),
+    subText: t('globalSalesChannelsSubText')
+  },
+]);
 onMounted(() => {
   if (route.query && route.query.loginFirstTime) {
     isSnackbarOn.value = true;

@@ -6,7 +6,7 @@
   "globalHome":"Home",
   "globalPersonalInsurance":"Seguros personas",
   "globalCompanyInsurance":"Seguros Empresas",
-  "globalCustomers":"Clientas/es",
+  "globalCustomersMenu":"Clientas/es",
   "globalPas":"PAS",
   "globalProviders":"Proveedoras/es",
   "globalAboutUs":"Quiénes somos",
@@ -28,5 +28,13 @@
   "globalDownloadAppStore":"Déscarga en app store",
   "globalNewSiteImgText":"Web Clientes",
   "globalNewSiteImgSubText":"Nuevo diseño y mas autogestión",
-  "globalClikHere":"Clic acá"
+  "globalClikHere":"Clic acá",
+  "globalCustomers":"Clientes",
+  "globalCustomersSubText":"Géstiona tus seguros",
+  "globalAccidents":"Siniestros",
+  "globalAccidentsSubText":"¿Qué hago si tengo uno?",
+  "globalPaymentWays":"Múltiples maneras de pagar",
+  "globalPaymentWaysSubText":"¿Cómo pago mi seguro?",
+  "globalSalesChannels":"Canales de venta",
+  "globalSalesChannelsSubText":"¿Dónde encontrarnos?"
 }

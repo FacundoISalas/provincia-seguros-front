@@ -6,7 +6,7 @@
   "globalHome":"Home",
   "globalPersonalInsurance":"Personal insurances",
   "globalCompanyInsurance":"Companies insurances",
-  "globalCustomers":"Customers",
+  "globalCustomersMenu":"Customers",
   "globalPas":"PAS",
   "globalProviders":"Providers",
   "globalAboutUs":"About us",
@@ -28,5 +28,13 @@
   "globalDownloadAppStore":"Download at App Store",
   "globalNewSiteImgText":"Customers web",
   "globalNewSiteImgSubText":"New design and user experience",
-  "globalClikHere":"Click here"
+  "globalClikHere":"Click here",
+  "globalCustomers":"Customers",
+  "globalCustomersSubText":"Manage your insurances",
+  "globalAccidents":"Accidents",
+  "globalAccidentsSubText":"What can I do if I have an accident?",
+  "globalPaymentWays":"Several payment methods",
+  "globalPaymentWaysSubText":"How do I pay my insurance?",
+  "globalSalesChannels":"Sales channels",
+  "globalSalesChannelsSubText":"Where to find us?"
 }
