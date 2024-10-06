@@ -13,8 +13,8 @@
       :key="i"
     >
     <v-card
-      width="100%"
-      height="100%"
+      width="100vw"
+      height="100vh"
     >
     <v-img
       height="100%"
@@ -80,6 +80,26 @@
     <div>{{  slide  }}</div>
     </v-carousel-item>
   </v-carousel>
+  <v-card
+  width="100vw"
+  height="20vh"
+  color="secondary-darken-1"
+  flat
+>
+  <div class="d-flex justify-center align-center fill-height">
+    <v-card-title class="text-center text-h4 text-uppercase d-flex align-center">
+        <v-icon
+        size="36"
+        class="mr-2"
+        >
+        mdi-phone
+      </v-icon>
+      <a href="tel:0810-222-2444" class="noDecoration">
+        0810-222-2444
+      </a>
+    </v-card-title>
+  </div>
+</v-card>
   <p>more content here</p>
   <p>more content here</p>
   <p>more content here</p>
@@ -150,6 +170,10 @@ onMounted(() => {
 });
 </script>
 <style scoped>
+.noDecoration {
+  color: inherit;
+  text-decoration: none !important;
+}
  .imgTextContainer {
   display: flex;
   position: absolute;

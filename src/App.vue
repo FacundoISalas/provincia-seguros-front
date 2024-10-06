@@ -18,8 +18,8 @@
         <v-img
         src="https://www.provinciaseguros.com.ar/wp-content/uploads/2017/05/pseguros2-1.png"
         alt="Provincia seguros"
-        width="160"
-        height="160"
+        width="auto"
+        height="auto"
         aspect-ratio="16/9"
         v-tooltip:start="$t('globalHome')"
         >
@@ -32,6 +32,8 @@
           v-for="item in menuItems"
           :key="item.title"
           :to="item.path ? item.path : ''"
+          size="x-small"
+          density="compact"
           >
           <p class="text-body-1"> {{ item.title }} </p>
           <v-icon
