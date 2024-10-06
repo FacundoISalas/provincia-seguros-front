@@ -1,9 +1,7 @@
 <template>
-  <v-responsive class="fill-height fill-width d-flex align-center justify-center">
-    <v-container fluid>
-      <BranchesTable/>
-    </v-container>
-  </v-responsive>
+  <v-container fluid>
+    <BranchesTable/>
+  </v-container>
 </template>
 
 <script lang="ts" setup>
