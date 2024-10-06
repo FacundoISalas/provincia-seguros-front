@@ -3,7 +3,7 @@
     <v-layout>
     <v-main>
       <v-app-bar
-        :class="isUserAuth ? '' : 'd-none'"
+        v-if="isUserAuth"
         elevation="2" 
       >
       <template v-slot:prepend>
@@ -46,6 +46,7 @@
       <v-spacer></v-spacer>
       <v-menu
         v-model="isUserMenuOn"
+        v-if="isUserMenuOn"
       >
         <template v-slot:activator="{ props }">
           <div v-tooltip:bottom="$t('globalOptions')" class="d-flex justify-space-between align-center mx-2 px-1">
