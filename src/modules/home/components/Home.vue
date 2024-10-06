@@ -100,10 +100,37 @@
     </v-card-title>
   </div>
 </v-card>
-  <p>more content here</p>
-  <p>more content here</p>
-  <p>more content here</p>
-  <p>more content here</p>
+ <v-row justify="center"
+ class="
+ bg-grey-darken-3
+ text-white
+ py-8
+ "
+ >
+  <v-col
+    v-for="cardHelper in cardHelpers"
+    :key="cardHelper"
+    lg="6"
+    md="6"
+    sm="12"
+    class="d-flex justify-center align-center"
+    >
+    <v-card
+      variant="outlined"
+      class="d-flex flex-column"
+      width="80%"
+      height="260"
+    >
+      <div class="d-flex justify-center align-center my-auto">
+        <v-icon size="120" class="mr-4"> {{  cardHelper.icon }}</v-icon>
+        <div>
+          <v-card-title class="mb-0 text-uppercase text-h5">{{  cardHelper.text }}</v-card-title>
+          <p class="mb-0 text-uppercase white-text text-h5">{{  cardHelper.subText }}</p>
+        </div>
+      </div>
+    </v-card>
+  </v-col>
+ </v-row>
 <v-snackbar
   v-model="isSnackbarOn"
   timeout="5000"
@@ -170,17 +197,17 @@ const cardHelpers = ref<any[]>([
     subText: t('globalCustomersSubText')
   },
   {
+    icon: 'mdi-account-credit-card',
+    text: t('globalPaymentWays'),
+    subText: t('globalPaymentWaysSubText')
+  },
+  {
     icon: 'mdi-car-back',
     text: t('globalAccidents'),
     subText: t('globalAccidentsSubText')
   },
   {
-    icon: 'mdi-account-credit-card-',
-    text: t('globalPaymentWays'),
-    subText: t('globalPaymentWaysSubText')
-  },
-  {
-    icon: 'mdi-handhsake',
+    icon: 'mdi-handshake',
     text: t('globalSalesChannels'),
     subText: t('globalSalesChannelsSubText')
   },
