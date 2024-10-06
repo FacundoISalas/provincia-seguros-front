@@ -18,5 +18,6 @@
   "globalLanguage":"Language",
   "globalNoDataAvailable":"No data available",
   "globalId":"Id",
-  "globalName":"Name"
+  "globalName":"Name",
+  "globalBranchesList":"Branches list"
 }

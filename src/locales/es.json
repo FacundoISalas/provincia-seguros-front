@@ -18,5 +18,6 @@
   "globalLanguage":"Idioma",
   "globalNoDataAvailable":"Sin datos disponibles",
   "globalId":"Id",
-  "globalName":"Nombre"
+  "globalName":"Nombre",
+  "globalBranchesList":"Listado de sucursales"
 }
