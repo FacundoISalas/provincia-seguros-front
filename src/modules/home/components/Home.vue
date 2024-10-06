@@ -142,7 +142,7 @@
   >
   <v-row>
   <v-col cols="12">
-    <p class="text-h5 text-uppercase text-center">Contacto</p>
+    <p class="text-h5 text-uppercase text-center">{{ $t('globalContact') }}</p>
     <v-divider
     opacity="10"
     thickness="5"
@@ -150,7 +150,7 @@
     color="white">
       <v-icon>mdi-email</v-icon>
     </v-divider>
-    <p class="text-body-1 text-center">Cómunicate con nosotros</p>
+    <p class="text-body-1 text-center">{{ $t('globalContactUs') }}</p>
   </v-col>
 
   <v-col
