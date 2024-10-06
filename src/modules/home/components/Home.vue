@@ -1,7 +1,7 @@
 <template>
 <v-snackbar
   v-model="isSnackbarOn"
-  timeout="2000"
+  timeout="5000"
   color="success"
   location="top"
 >
@@ -13,17 +13,20 @@
     >
     </v-btn>
   </template>
-  {{ $t('globalLoginSucces') }}
+  {{ `${$t('globalLoginSucces')}: ${userName}` }}
 </v-snackbar>
 </template>
 
 <script lang="ts" setup>
-import { ref, onMounted } from 'vue';
+import { ref, computed, onMounted } from 'vue';
 import { useRoute } from 'vue-router'
 const route = useRoute()
 
 // data
 const isSnackbarOn = ref<boolean|undefined>(false);
+import { useUserData } from '@/store/userDataStore';
+const userDataStore = useUserData();
+const userName = computed(() => userDataStore.getUserName);
 
 onMounted(() => {
   if (route.query && route.query.loginFirstTime) {

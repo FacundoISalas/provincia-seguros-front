@@ -1,8 +1,16 @@
 <template>
   <Form  v-slot="{ meta }">
     <v-card elevation="3" rounded="rounded-lg" max-height="640" max-width="640" class="mx-auto my-auto">
-      <v-card-title> {{  $t('globalLogin') }}</v-card-title>
       <v-card-text>
+        <v-img
+          src="https://www.provinciaseguros.com.ar/wp-content/uploads/2017/05/pseguros2-1.png"
+          alt="Provincia seguros"
+          width="180"
+          height="180"
+          aspect-ratio="16/9"
+          class="mx-auto my-1"
+        >
+        </v-img>
         <v-row>
           <v-col cols="12">
               <Field :name="$t('globalUser')" :rules="{ required: true }" v-slot="{ field, errors }">
