@@ -27,9 +27,52 @@
         <v-card
           color="secondary"
           class="d-flex flex-column justify-center"
+          flat
          >
-          <v-card-title class="textBreak">{{ slide.text }}</v-card-title>
-          <v-card-subtitle class="textBreak"> {{  slide.subText }}</v-card-subtitle>
+          <v-card-title
+          class="textBreak text-h6 text-uppercase text-white"
+          >
+            {{ slide.text }}
+          </v-card-title>
+          <p 
+            class="textBreak pa-2 mx-2 text-white"
+            v-if="slide.subText"
+          >
+            {{  `${slide.subText}.` }}
+          </p>
+          <v-card-actions
+            v-if="slide.actionTextPrimary || slide.actionTextSecondary"
+            class="my-2 mx-2 d-flex flex-column justify-start align-start"
+            >
+            <v-btn
+             v-if="slide.actionTextPrimary"
+             color="secondary--text bg-primary"
+             :block="$vuetify.display.mobile"
+            >
+              {{ slide.actionTextPrimary }}
+              <v-icon
+                v-if="slide.actionPrimaryIcon"
+                color="secondary"
+                size="28"
+              >
+                {{  slide.actionPrimaryIcon }}
+              </v-icon>
+            </v-btn>
+            <v-btn
+              v-if="slide.actionTextSecondary"
+              color="secondary--text bg-primary"
+              :block="$vuetify.display.mobile"
+            >
+              {{ slide.actionTextSecondary}}
+              <v-icon
+                v-if="slide.actionSecondaryIcon"
+                color="secondary"
+                size="28"
+              >
+                {{  slide.actionSecondaryIcon }}
+              </v-icon>
+            </v-btn>
+          </v-card-actions>
         </v-card>
       </div>
     </v-img>
@@ -77,21 +120,27 @@ const slides = ref<any[]>([
     text: t('globalQuoteInsuranceImgText'),
     subText: null,
     actionTextPrimary: t('globalQuoteHere'),
+    actionPrimaryIcon: null,
     actionTextSecondary: null,
+    actionSecondaryIcon: null,
   },
   {
     src: '/src/assets/images/appPhone.jpg',
     text: t('globalDownloadAppImgText'),
     subText: t('globalDownloadAppImgSubText'),
     actionTextPrimary: t('globalDownloadPlayStore'),
+    actionPrimaryIcon: 'mdi-play',
     actionTextSecondary: t('globalDownloadAppStore'),
+    actionSecondaryIcon: 'mdi-apple'
   },
   {
     src: '/src/assets/images/laptop.jpg',
     text: t('globalNewSiteImgText'),
     subText: t('globalNewSiteImgSubText'),
     actionTextPrimary: t('globalClikHere'),
+    actionPrimaryIcon: null,
     actionTextSecondary: null,
+    actionSecondaryIcon: null,
   },
 ]);
 onMounted(() => {
@@ -104,7 +153,7 @@ onMounted(() => {
  .imgTextContainer {
   display: flex;
   position: absolute;
-  top: 65%;
+  top: 68%;
   left: 0;
   transform: translateY(-50%);
   z-index: 1;
