@@ -32,6 +32,8 @@ para ejecutar el proyecto:
 ```
 ir al localhost por defecto http://localhost:3000/
 
+pd no se por que pero la primera vez que levanta el proyecto es relativamente lento pero una vez iniciado ya navega con fluidez.
+
 # Notas del proyecto y navegación
 
 Mas alla de los requerimientos brindados este proyecto lo realice asumiendo que es un proyecto nuevo que puede escalar a largo plazo
