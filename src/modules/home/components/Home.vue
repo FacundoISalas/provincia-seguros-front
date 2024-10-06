@@ -80,6 +80,7 @@
     <div>{{  slide  }}</div>
     </v-carousel-item>
   </v-carousel>
+<!-- numero principal de contacto -->
   <v-card
   width="100vw"
   height="20vh"
@@ -100,6 +101,7 @@
     </v-card-title>
   </div>
 </v-card>
+<!-- tarjetas informacion seguros -->
  <v-row justify="center"
  class="
  bg-grey-darken-3
@@ -137,6 +139,7 @@
     </v-card>
   </v-col>
  </v-row>
+<!--  footer -->
  <v-footer
     class="bg-secondary-darken-1"
   >
@@ -152,7 +155,6 @@
     </v-divider>
     <p class="text-body-1 text-center">{{ $t('globalContactUs') }}</p>
   </v-col>
-
   <v-col
   cols="12"
   lg="6"
@@ -168,7 +170,6 @@
       </div>
     </div>
   </v-col>
-
   <v-col
     cols="12"
     lg="6"
@@ -183,7 +184,6 @@
       </div>
     </div>
   </v-col>
-
   <v-col
     cols="12"
     lg="6"
@@ -199,7 +199,6 @@
       </div>
     </div>
   </v-col>
-
   <v-col
     cols="12"
     lg="6"
@@ -221,7 +220,8 @@
     </div>
   </v-col>
 </v-row>
-  </v-footer>
+</v-footer>
+<!-- snackbar para indicar inicio de sesión correcto -->
 <v-snackbar
   v-model="isSnackbarOn"
   timeout="5000"
@@ -303,6 +303,7 @@ const cardHelpers = ref<any[]>([
     subText: t('globalSalesChannelsSubText')
   },
 ]);
+// revisar si es el primer inicio de sesion para mostrar snackbar
 onMounted(() => {
   if (route.query && route.query.loginFirstTime) {
     isSnackbarOn.value = true;

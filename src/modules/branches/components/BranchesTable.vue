@@ -58,7 +58,7 @@
 </template>
 
 <script lang="ts" setup>
-// vue y api service
+// vue y api service de axios
 import { ref, onMounted } from 'vue';
 import apiService from '@/services/apiService';
 // i18n

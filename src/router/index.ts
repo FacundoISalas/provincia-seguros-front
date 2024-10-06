@@ -9,8 +9,8 @@ const router = createRouter({
 
 // navigation guard para home '/'
 router.beforeEach((to, from, next) => {
-  const userDataStore = useUserData(); // Get the store inside the guard
-  const isAuthenticated = userDataStore.getIsUserAuth; // Access the authentication status
+  const userDataStore = useUserData();
+  const isAuthenticated = userDataStore.getIsUserAuth;
   // si el usuario esta autenticado e ingresa a login por algun motivo
   // redirecciona a home
   if (to.name === 'Login' && isAuthenticated) {
