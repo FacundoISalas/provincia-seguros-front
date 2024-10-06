@@ -75,6 +75,7 @@
               fab
               v-tooltip:bottom="$t('globalLogout')"
               class="my-2"
+              @click="logout()"
             >
               {{ $t('globalLogout') }}
               <v-icon
@@ -128,7 +129,9 @@ const { t } = useI18n();
 type Locale = 'es' | 'en';
 const userDataStore = useUserData();
 const commonAppStore = useCommonAppStore();
+import { useRouter } from 'vue-router'
 
+const router = useRouter();
 // data
 const userName = ref<string>(userDataStore.getUserName);
 const isUserMenuOn = ref<boolean|undefined>(false);
@@ -161,7 +164,11 @@ const menuItems = computed(() => [
     icon: 'mdi-bank-circle-outline',
   },
 ]);
-
+// logout function
+function logout() {
+  userDataStore.logout();
+  router.push('/login');
+}
 // watch 
 watch(selectedLanguage, (newLocale) => {
   commonAppStore.setLocaleI18n(newLocale);

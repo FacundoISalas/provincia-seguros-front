@@ -12,18 +12,23 @@ export const useUserData = defineStore('userData', () => {
   const getUserName = computed(() => userName.value)
   const getIsUserAuth = computed(() => isUserAuth.value)
   // functions funciona simil a actions en vuex
-  
   // funcion para guardar los datos del usuario
   function setUserData(user: string,) {
     userName.value = user;
     isUserAuth.value = true;
   }
-  
+  // funcion para cerrar sesión
+  function logout() {
+    userName.value = '';
+    isUserAuth.value = false;
+  }
+
   return {
     userName,
     isUserAuth,
     getUserName,
     getIsUserAuth,
+    logout,
     setUserData
   };
 },
