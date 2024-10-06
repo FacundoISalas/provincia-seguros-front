@@ -11,7 +11,6 @@ const router = createRouter({
 router.beforeEach((to, from, next) => {
   const userDataStore = useUserData(); // Get the store inside the guard
   const isAuthenticated = userDataStore.getIsUserAuth; // Access the authentication status
-
   // si el usuario esta autenticado e ingresa a login por algun motivo
   // redirecciona a home
   if (to.name === 'Login' && isAuthenticated) {
@@ -27,6 +26,7 @@ router.beforeEach((to, from, next) => {
 
 // Workaround for https://github.com/vitejs/vite/issues/11804
 router.onError((err, to) => {
+  console.log('err', err);
   if (err?.message?.includes?.('Failed to fetch dynamically imported module')) {
     if (!localStorage.getItem('vuetify:dynamic-reload')) {
       console.log('Reloading page to fix dynamic import error')

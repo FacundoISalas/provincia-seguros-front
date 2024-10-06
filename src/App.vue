@@ -3,7 +3,7 @@
     <v-layout>
     <v-main>
       <v-app-bar
-        :class="userDataStore.getIsUserAuth ? '' : 'd-none'"
+        v-if="isUserAuth"
         elevation="2" 
       >
       <template v-slot:prepend>
@@ -128,15 +128,16 @@ const { t } = useI18n();
 
 const userDataStore = useUserData();
 const commonAppStore = useCommonAppStore();
-import { useRouter } from 'vue-router'
+import { useRouter } from 'vue-router';
 
 const router = useRouter();
 // data
-const userName = ref<string>(userDataStore.getUserName);
+const userName = computed(() => userDataStore.getUserName);
 const isUserMenuOn = ref<boolean|undefined>(false);
 const drawer = ref<boolean|undefined>(false);
 const selectedLanguage = computed(() => commonAppStore.getLocale);
 // computed
+const isUserAuth = computed(() => userDataStore.getIsUserAuth)
 const menuItems = computed(() => [
   {
     title: t('globalPersonalInsurance'),

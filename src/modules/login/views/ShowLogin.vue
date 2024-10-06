@@ -1,9 +1,13 @@
 <template>
-  <v-responsive class="fill-height fill-width d-flex align-center justify-center gradient-background">
-    <v-container fluid>
-      <Login/>
-    </v-container>
-  </v-responsive>
+  <v-app>
+    <v-main>
+      <v-responsive class="fill-height fill-width d-flex align-center justify-center gradient-background">
+        <v-container fluid>
+          <Login/>
+        </v-container>
+      </v-responsive>
+    </v-main>
+  </v-app>
 </template>
 
 <script lang="ts" setup>

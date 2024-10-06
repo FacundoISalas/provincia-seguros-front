@@ -7,7 +7,7 @@ export const useUserData = defineStore('userData', () => {
   // data
   const userName = ref<string>('');
   // boolean valid fake login
-  const isUserAuth = ref<Boolean>(false);
+  const isUserAuth = ref<boolean>(false);
   // computed funciona simil a getters en vuex
   const getUserName = computed(() => userName.value)
   const getIsUserAuth = computed(() => isUserAuth.value)
