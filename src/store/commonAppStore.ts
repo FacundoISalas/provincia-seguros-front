@@ -12,13 +12,13 @@ export const useCommonAppStore = defineStore('commonAppStore', () => {
 
   function setLocaleI18n(newLocale: Locale) {
     locale.value = newLocale;
-    localize(newLocale);
   }
 
   // si ocurren cambios en el locale actualizo tanto i18n como validaciones 
   watch(locale, (newLocale) => {
     i18n.global.locale = newLocale;
     setLocale(newLocale);
+    localize(newLocale);
   });
   return { locale, getLocale, setLocaleI18n };
 },

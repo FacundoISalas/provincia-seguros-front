@@ -62,15 +62,7 @@
         </template>
         <v-card>
           <v-card-text>
-            <v-radio-group
-              inline
-              :label="$t('language')"
-              append-icon="mdi-translate"
-              v-model="selectedLanguage"
-            >
-              <v-radio :label="$t('globalEs')" :value="t('globalEs')"></v-radio>
-              <v-radio :label="t('globalEn')" :value="t('globalEn')"></v-radio>
-            </v-radio-group>
+          <LanguageSelector/>
             <v-btn
               fab
               v-tooltip:bottom="$t('globalLogout')"
@@ -118,31 +110,21 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, watch } from 'vue';
+import LanguageSelector from '@/modules/common/components/LanguageSelector.vue';
+import { ref, computed } from 'vue';
 import { useUserData } from '@/store/userDataStore';
-import { useCommonAppStore } from '@/store/commonAppStore';
 import { useI18n } from 'vue-i18n';
-import { localize } from '@vee-validate/i18n';
 const { t } = useI18n();
 
-
-type Locale = 'es' | 'en';
-// interfaces
-interface menuItemsInterface {
-  title: string;
-  path?: string;
-  icon?: string;
-}
 const userDataStore = useUserData();
-const commonAppStore = useCommonAppStore();
 
 // data
 const userName = ref<string>(userDataStore.getUserName);
 const isUserMenuOn = ref<boolean|undefined>(false);
 const drawer = ref<boolean|undefined>(false);
-const selectedLanguage = ref<Locale>(commonAppStore.locale);
 
-const menuItems = ref<menuItemsInterface[]>([
+// computed
+const menuItems = computed(() => [
   {
     title: t('globalPersonalInsurance'),
   },
@@ -164,13 +146,7 @@ const menuItems = ref<menuItemsInterface[]>([
   {
     title: t('globalBranches'),
     path: '/sucursales',
-    icon: 'mdi-bank-circle-outline'
+    icon: 'mdi-bank-circle-outline',
   },
-]
-);
-
-// watch 
-watch(selectedLanguage, (newLocale) => {
-  commonAppStore.setLocaleI18n(newLocale);
-  });
+]);
 </script>
