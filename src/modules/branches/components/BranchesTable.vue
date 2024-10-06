@@ -42,12 +42,14 @@
 <script lang="ts" setup>
 import { ref, onMounted } from 'vue';
 import apiService from '@/services/apiService';
+import { useI18n } from 'vue-i18n';
+const { t } = useI18n();
 
 const dataTable = ref<any[]>([]);
 const isLoading = ref<boolean>(false);
-const headers = ref<any[]>([
-  { title: 'Id', align: 'start', key: 'id' },
-  { title: 'Nombre', align: 'start', key: 'nombre' },
+  const headers = ref<any[]>([
+    { title: t('globalId'), align: 'start', key: 'id' },
+    { title: t('globalName'), align: 'start', key: 'nombre' },
 ]);
 
 const validProvinces: any[] = ['02','58','94','82','14', '54'];

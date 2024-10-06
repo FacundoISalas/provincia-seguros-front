@@ -16,5 +16,7 @@
   "globalEs":"es",
   "globalEn":"en",
   "globalLanguage":"Language",
-  "globalNoDataAvailable":"No data available"
+  "globalNoDataAvailable":"No data available",
+  "globalId":"Id",
+  "globalName":"Name"
 }

@@ -8,9 +8,9 @@ export const useCommonAppStore = defineStore('commonAppStore', () => {
 
   const locale = ref<Locale>('es');
   const getLocale = computed(() => locale.value);
-
   function setLocaleI18n(newLocale: Locale) {
     locale.value = newLocale;
+    location.reload();
   }
 
   // si ocurren cambios en el locale actualizo tanto i18n como validaciones 
