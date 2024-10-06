@@ -66,7 +66,8 @@
               inline
               :label="$t('globalLanguage')"
               append-icon="mdi-translate"
-              v-model="selectedLanguage"
+              :model-value="selectedLanguage"
+              @change="(e) => commonAppStore.setLocaleI18n(e.target.value)"
             >
               <v-radio :label="$t('globalEs')" :value="t('globalEs')"></v-radio>
               <v-radio :label="t('globalEn')" :value="t('globalEn')"></v-radio>
@@ -125,8 +126,6 @@ import { useCommonAppStore } from '@/store/commonAppStore';
 import { useI18n } from 'vue-i18n';
 const { t } = useI18n();
 
-
-type Locale = 'es' | 'en';
 const userDataStore = useUserData();
 const commonAppStore = useCommonAppStore();
 import { useRouter } from 'vue-router'
@@ -136,8 +135,7 @@ const router = useRouter();
 const userName = ref<string>(userDataStore.getUserName);
 const isUserMenuOn = ref<boolean|undefined>(false);
 const drawer = ref<boolean|undefined>(false);
-const selectedLanguage = ref<Locale>(commonAppStore.locale);
-
+const selectedLanguage = computed(() => commonAppStore.getLocale);
 // computed
 const menuItems = computed(() => [
   {
