@@ -19,5 +19,14 @@
   "globalNoDataAvailable":"Sin datos disponibles",
   "globalId":"Id",
   "globalName":"Nombre",
-  "globalBranchesList":"Listado de sucursales"
+  "globalBranchesList":"Listado de sucursales",
+  "globalQuoteHere":"Cotizá acá",
+  "globalQuoteInsuranceImgText":"Cotizá Y contratá el seguro para tu hogar de manera fácil y rápida",
+  "globalDownloadAppImgText":"Descargá la app y accedé a nuestros servicios",
+  "globalDownloadAppImgSubText":"Lllevá con vos la nueva app para tener todo lo que necesitás a un dedo de distancia",
+  "globalDownloadPlayStore":"Descargá en play store",
+  "globalDownloadAppStore":"Déscarga en app store",
+  "globalNewSiteImgText":"Web Clientes",
+  "globalNewSiteImgSubText":"Nuevo diseño y mas autogestión",
+  "globalClikHere":"Clic acá"
 }

@@ -1,9 +1,5 @@
 <template>
-  <v-responsive class="fill-height fill-width d-flex align-center justify-center">
-    <v-container fluid>
-      <Home/>
-    </v-container>
-  </v-responsive>
+  <Home/>
 </template>
 
 <script lang="ts" setup>

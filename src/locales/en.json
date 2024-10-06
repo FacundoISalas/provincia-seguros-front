@@ -19,5 +19,14 @@
   "globalNoDataAvailable":"No data available",
   "globalId":"Id",
   "globalName":"Name",
-  "globalBranchesList":"Branches list"
+  "globalBranchesList":"Branches list",
+  "globalQuoteHere":"Request your quote here",
+  "globalQuoteInsuranceImgText":"Quote and request your insurance for your home in an hassle-free way",
+  "globalDownloadAppImgText":"Download the app and check our services",
+  "globalDownloadAppImgSubText":"Bring with you the new app to have everything you need at your fingertips",
+  "globalDownloadPlayStore":"Download at Play Store",
+  "globalDownloadAppStore":"Download at App Store",
+  "globalNewSiteImgText":"Customers web",
+  "globalNewSiteImgSubText":"New design and user experience",
+  "globalClikHere":"Click here"
 }
