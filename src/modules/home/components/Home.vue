@@ -137,6 +137,83 @@
     </v-card>
   </v-col>
  </v-row>
+ <v-footer
+    class="bg-secondary-darken-1"
+  >
+  <v-row class="text-center">
+    <v-col cols="12">
+      <p class="text-h5 text-uppercase text-center">Contacto</p>
+      <v-divider opacity="10" thickness="5" length="120" color="white">
+        <v-icon>mdi-email</v-icon>
+      </v-divider>
+      <p class="text-body-1 text-center">Cómunicate con nosotros</p>
+      </v-col>
+      <v-col
+      cols="12"
+      lg="6"
+      md="6"
+      sm="12"
+      >
+        <div class="d-flex flex justify-start align-center">
+          <v-icon>mdi-map-marker</v-icon>
+          <div class="d-flex flex-column align-start">
+            <p>{{ $t('globalAdress') }}</p>
+            <p> {{ $t('globalAddressLocation') }}</p>
+            <p> {{ $t('globalCityLocation') }}</p>
+          </div>
+        </div>
+      </v-col>
+      <v-col
+      cols="12"
+      lg="6"
+      md="6"
+      sm="12"
+      >
+        <div class="d-flex flex justify-start align-center">
+          <v-icon>mdi-email</v-icon>
+          <div class="d-flex flex-column align-start mx-2">
+            <p>{{ $t('globalEmail') }}</p>
+            <p>{{ $t('globalEmailAdress') }}</p>
+          </div>
+        </div>
+      </v-col>
+      <v-col
+      cols="12"
+      lg="6"
+      md="6"
+      sm="12"
+      >
+        <div class="d-flex flex justify-start align-center">
+          <v-icon>mdi-cellphone</v-icon>
+          <div class="d-flex flex-column align-center mx-2">
+            <p>{{ $t('globalPhones') }}</p>
+            <p>{{ $t('globalPhoneOption1') }}</p>
+            <p>{{ $t('globalPhoneOption2') }}</p>
+          </div>
+        </div>
+      </v-col>
+      <v-col
+      cols="12"
+      lg="6"
+      md="6"
+      sm="12"
+      >
+        <div class="d-flex flex justify-start align-center">
+          <v-icon>mdi-clock</v-icon>
+          <div class="d-flex flex-column align-center mx-2">
+            <p>{{ $t('globalHourTimes') }}</p>
+            <p>{{ $t('globalAttentionHourTimes') }}</p>
+            <p>{{ $t('globalEmergenciesAttention') }}</p>
+          </div>
+        </div>
+      </v-col>
+      <v-col cols="12" class="text-center">
+        <div>
+          {{ new Date().getFullYear() }} — <strong>Provincia seguros</strong>
+        </div>
+      </v-col>
+    </v-row>
+  </v-footer>
 <v-snackbar
   v-model="isSnackbarOn"
   timeout="5000"

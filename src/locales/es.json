@@ -36,5 +36,16 @@
   "globalPaymentWays":"Múltiples maneras de pagar",
   "globalPaymentWaysSubText":"¿Cómo pago mi seguro?",
   "globalSalesChannels":"Canales de venta",
-  "globalSalesChannelsSubText":"¿Dónde encontrarnos?"
+  "globalSalesChannelsSubText":"¿Dónde encontrarnos?",
+  "globalAdress":"Direccíon",
+  "globalAddressLocation":"Carlos pellegrini 71",
+  "globalCityLocation":"(C1009ABA) Ciudad Autónoma de Buenos Aires",
+  "globalEmail":"Correo",
+  "globalEmailAdress":"consultas@pseguros.com.ar",
+  "globalPhones":"Telefonos",
+  "globalPhoneOption1":"0810 - 222 -2444",
+  "globalPhoneOption2":"(011) 4346 - 7300",
+  "globalHourTimes":"Horarios",
+  "globalAttentionHourTimes":"Lunes a viernes, 9:00 - 17: 00",
+  "globalEmergenciesAttention":"Siniestros con lesiones 0810-222-2444 las 24h"
 }
