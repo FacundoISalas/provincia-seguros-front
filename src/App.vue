@@ -44,52 +44,54 @@
         </v-btn>
       </v-toolbar-items>
       <v-spacer></v-spacer>
-      <v-menu
-        v-model="isUserMenuOn"
-        v-if="isUserMenuOn"
-      >
-        <template v-slot:activator="{ props }">
-          <div v-tooltip:bottom="$t('globalOptions')" class="d-flex justify-space-between align-center mx-2 px-1">
-            <v-btn
-              color="secondary"
-              v-bind="props"
-              icon="mdi-account"
-              >
-            </v-btn>
-            <p class="font-size-1 font-weight-bold">
-              {{ userName }}
-            </p>
-          </div>
-        </template>
-        <v-card>
-          <v-card-text>
-            <v-radio-group
-              inline
-              :label="$t('globalLanguage')"
-              append-icon="mdi-translate"
-              :model-value="selectedLanguage"
-              @change="(e) => commonAppStore.setLocaleI18n(e.target.value)"
-            >
-              <v-radio :label="$t('globalEs')" :value="t('globalEs')"></v-radio>
-              <v-radio :label="t('globalEn')" :value="t('globalEn')"></v-radio>
-            </v-radio-group>
-            <v-btn
-              fab
-              v-tooltip:bottom="$t('globalLogout')"
-              class="my-2"
-              @click="logout()"
-            >
-              {{ $t('globalLogout') }}
-              <v-icon
+      <v-menu>
+      <template v-slot:activator="{ props: menu }">
+        <v-tooltip location="top">
+          <template v-slot:activator="{ props: tooltip }">
+            <div class="d-flex justify-space-between align-center mx-2 px-1">
+              <v-btn
                 color="secondary"
-                class="ml-1"
-              >
-                mdi-logout
-              </v-icon>
-            </v-btn>
-          </v-card-text>
-        </v-card>
-      </v-menu>
+                 v-bind="mergeProps(menu, tooltip)"
+                icon="mdi-account"
+                >
+              </v-btn>
+              <p class="font-size-1 font-weight-bold">
+                {{ userName }}
+              </p>
+            </div>
+          </template>
+          <span> {{ $t('globalOptions')}} </span>
+        </v-tooltip>
+      </template>
+      <v-card>
+        <v-card-text>
+          <v-radio-group
+            inline
+            :label="$t('globalLanguage')"
+            append-icon="mdi-translate"
+            :model-value="selectedLanguage"
+            @change="(e) => commonAppStore.setLocaleI18n(e.target.value)"
+          >
+            <v-radio :label="$t('globalEs')" :value="t('globalEs')"></v-radio>
+            <v-radio :label="t('globalEn')" :value="t('globalEn')"></v-radio>
+          </v-radio-group>
+          <v-btn
+            fab
+            v-tooltip:bottom="$t('globalLogout')"
+            class="my-2"
+            @click="logout()"
+          >
+            {{ $t('globalLogout') }}
+            <v-icon
+              color="secondary"
+              class="ml-1"
+            >
+              mdi-logout
+            </v-icon>
+          </v-btn>
+        </v-card-text>
+      </v-card>
+    </v-menu>
     </v-app-bar>
     <v-navigation-drawer
       v-model="drawer"
@@ -121,7 +123,7 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, watch, computed } from 'vue';
+import { ref, watch, computed, mergeProps } from 'vue';
 import { useUserData } from '@/store/userDataStore';
 import { useCommonAppStore } from '@/store/commonAppStore';
 import { useI18n } from 'vue-i18n';
@@ -134,7 +136,6 @@ import { useRouter } from 'vue-router';
 const router = useRouter();
 // data
 const userName = computed(() => userDataStore.getUserName);
-const isUserMenuOn = ref<boolean|undefined>(false);
 const drawer = ref<boolean|undefined>(false);
 const selectedLanguage = computed(() => commonAppStore.getLocale);
 // computed
