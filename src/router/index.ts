@@ -1,37 +1,28 @@
-function isAuthenticated() {
-  let isAuth: boolean = false;
-  const localStorageData: string | null = localStorage.getItem('userData');
-  if (localStorageData) {
-    const jsonParse: any = JSON.parse(localStorageData);
-    if (jsonParse) {
-      isAuth = jsonParse.isUserAuth;
-    }
-  }
-  return isAuth;
-}
-
-import { createRouter, createWebHistory } from 'vue-router/auto'
+import { createRouter, createWebHistory } from 'vue-router/auto';
 import routes from '@/router/routes';
+import { useUserData } from '@/store/userDataStore';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes,
-})
+});
 
 // navigation guard para home '/'
 router.beforeEach((to, from, next) => {
+  const userDataStore = useUserData(); // Get the store inside the guard
+  const isAuthenticated = userDataStore.getIsUserAuth; // Access the authentication status
+
   // si el usuario esta autenticado e ingresa a login por algun motivo
   // redirecciona a home
-  if (to.name === 'Login' && isAuthenticated()) {
-    next({ name: 'Home' });
+  if (to.name === 'Login' && isAuthenticated) {
+    return next({ name: 'Home' });
   }
-  if (to.meta.requiresAuth && !isAuthenticated()) {
+  if (to.meta.requiresAuth && !isAuthenticated) {
     // si el usuario no esta autenticado redirige a login
-    next({ name: 'Login' });
-  } else {
-    // caso contrario va a la proxima ruta
-    next();
+    return next({ name: 'Login' });
   }
+  // caso contrario va a la proxima ruta
+  next();
 });
 
 // Workaround for https://github.com/vitejs/vite/issues/11804

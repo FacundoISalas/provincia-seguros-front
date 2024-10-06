@@ -3,7 +3,7 @@
     <v-layout>
     <v-main>
       <v-app-bar
-        v-if="userDataStore.getIsUserAuth"
+        :class="userDataStore.getIsUserAuth ? '' : 'd-none'"
         elevation="2" 
       >
       <template v-slot:prepend>
