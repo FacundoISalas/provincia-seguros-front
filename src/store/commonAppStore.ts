@@ -6,8 +6,7 @@ import { localize, setLocale } from '@vee-validate/i18n';
 type Locale = 'es' | 'en';
 export const useCommonAppStore = defineStore('commonAppStore', () => {
 
-  // reviso si existe locale persistido de antes en el localstorage si no por defecto utiliza locale es español
-  const locale = ref<Locale>(localStorage.getItem('pinia-state') ? JSON.parse(localStorage.getItem('pinia-state')!).commonAppStore.locale : 'es');
+  const locale = ref<Locale>('es');
   const getLocale = computed(() => locale.value);
 
   function setLocaleI18n(newLocale: Locale) {
@@ -21,8 +20,5 @@ export const useCommonAppStore = defineStore('commonAppStore', () => {
     localize(newLocale);
   });
   return { locale, getLocale, setLocaleI18n };
-},
-{
-  persist: true,
 });
 

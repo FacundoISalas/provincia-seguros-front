@@ -31,7 +31,4 @@ export const useUserData = defineStore('userData', () => {
     logout,
     setUserData
   };
-},
-{
-  persist: true,
 });
