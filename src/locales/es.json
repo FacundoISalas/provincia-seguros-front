@@ -15,5 +15,6 @@
   "globalLogout":"Cerrar sesión",
   "globalEs":"es",
   "globalEn":"en",
-  "globalLanguage":"Idioma"
+  "globalLanguage":"Idioma",
+  "globalNoDataAvailable":"Sin datos disponibles"
 }

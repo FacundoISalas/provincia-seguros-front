@@ -1,11 +1,12 @@
 <template>
-  <v-card>
+  <v-responsive class="fill-height fill-width d-flex align-center justify-center">
     <v-container fluid>
-      <p>branches</p>
+      <BranchesTable/>
     </v-container>
-  </v-card>
+  </v-responsive>
 </template>
 
 <script lang="ts" setup>
+import BranchesTable from '@/modules/branches/components/BranchesTable.vue';
 </script>
   
