@@ -2,5 +2,15 @@
   "globalLogin":"Login",
   "globalUser":"User",
   "globalPassword":"Password",
-  "globalLoginSucces":"Login successful, welcome"
+  "globalLoginSucces":"Login successful, welcome",
+  "globalHome":"Home",
+  "globalPersonalInsurance":"Personal insurances",
+  "globalCompanyInsurance":"Companies insurances",
+  "globalCustomers":"Customers",
+  "globalPas":"PAS",
+  "globalProviders":"Providers",
+  "globalAboutUs":"About us",
+  "globalBranches":"Branches",
+  "globalOptions":"Options",
+  "globalLogout":"Logout"
 }

@@ -2,5 +2,15 @@
   "globalLogin":"Login",
   "globalUser":"Usuario",
   "globalPassword":"Contraseña",
-  "globalLoginSucces":"Inicio de sesión correcto, bienvenido"
+  "globalLoginSucces":"Inicio de sesión correcto, bienvenido",
+  "globalHome":"Home",
+  "globalPersonalInsurance":"Seguros personas",
+  "globalCompanyInsurance":"Seguros Empresas",
+  "globalCustomers":"Clientas/es",
+  "globalPas":"PAS",
+  "globalProviders":"Proveedoras/es",
+  "globalAboutUs":"Quiénes somos",
+  "globalBranches":"Sucursales",
+  "globalOptions":"Opciones",
+  "globalLogout":"Cerrar sesión"
 }
